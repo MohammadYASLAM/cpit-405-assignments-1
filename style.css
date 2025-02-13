@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure the parent section is relatively positioned */
+#about {
+    position: relative; /* This will be the reference for the absolute positioning of .contact-info */
+    padding: 20px; 
+}
+/* Style for the contact-info container */
+.contact-info {
+    position: absolute;
+    left: -30%; 
+    top: 0;
+    padding: 20px; 
+    border-radius: 8px; 
+    width: auto; /* Allow the width to adjust based on content */
+    max-width: 300px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between elements */
+}
+
+/* Ensure the image is properly aligned to the left */
+.contact-info img {
+    align-self: flex-start; /* Align the image to the left */
+}
+
+/* Contact details section */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text and links to the left */
+}
+
+/* Aligning the headings and links */
+.contact-details h1,
+.contact-details h2 {
+    margin: 0; /* Remove default margins */
+    text-align: left; /* Align text to the left */
+}
+
+.contact-details a {
+    text-align: left; /* Align the links to the left */
+    text-decoration: none; 
+    color: #007bff; 
+    margin-bottom: 10px; /* Add space between the links */
+}
+
+
+
+
+
+
+header {
+    background: rgba(255, 255, 255, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: flex-start; /* Ensures the content is aligned left */
+}
+
+.profile-img-main, .profile-img-lg {
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+}
+
+.profile-img-main {
+    width: 250px;
+    height: 250px;
+    margin-right: 2rem;
+    animation: rgb-border 3s infinite alternate;
+    -webkit-animation: rgb-border 3s infinite alternate;
+}
+
+
+
+
+.profile-img-main  {
+    /* Increased size */ 
+    border: 5px solid transparent;
+    animation: rgb-border 3s infinite alternate;
+    -webkit-animation: rgb-border 3s infinite alternate;
+}
+
+.profile-img-lg  {
+    width: 60px;
+    height: 60px;
+    border: 5px solid transparent;
+    margin-right: 1rem; /* Space between profile image and navigation links */
+    animation: rgb-border 3s infinite alternate;
+    -webkit-animation: rgb-border 3s infinite alternate;
+}
+
+@keyframes rgb-border {
+    0% {
+        border-color: red;
+    }
+    25% {
+        border-color: green;
+    }
+    50% {
+        border-color: blue;
+    }
+    75% {
+        border-color: yellow;
+    }
+    100% {
+        border-color: purple;
+    }
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 5px;  /* Adjust the space between the labels if needed */
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;  /* Reduce space between radio button and label text */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Home Page Styles */
+.about-text::first-letter {
+    font-size: 200%;
+    color: #007bff;
+}
+
+.fragment-link {
+    color: #28a745;
+    border-bottom: 2px solid #28a745;
+}
+
+.social {
+    margin-top: 1rem;
+}
+
+.social a {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: #007bff;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Form Styles */
+form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}
