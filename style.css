@@ -57,6 +57,7 @@ body {
     text-align: left; /* Align the links to the left */
     text-decoration: none; 
     color: #007bff; 
+    flex: auto;
     margin-bottom: 10px; /* Add space between the links */
 }
 
