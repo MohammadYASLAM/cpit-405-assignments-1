@@ -16,22 +16,30 @@ body {
 }
 
 /* Ensure the parent section is relatively positioned */
-#about {
-    position: relative; /* This will be the reference for the absolute positioning of .contact-info */
-    padding: 20px; 
+#about{
+    display: flex;
+    flex-direction: row; /* Arrange elements side by side */
+    justify-content: flex-start; /* Align items to the left */
+    align-items:flex-start; /* Vertically align items */
+    padding: 20px;
+    position: relative;
+    gap: 20px; /* Add spacing between image and text */
 }
+
+
+
+
+
 /* Style for the contact-info container */
-.contact-info {
-    position: absolute;
-    left: -30%; 
-    top: 0;
-    padding: 20px; 
-    border-radius: 8px; 
-    width: auto; /* Allow the width to adjust based on content */
-    max-width: 300px; 
+.contact-info, .schedule, .courses {
+    
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Space between elements */
+    align-items: flex-start; /* Align the content to the left */
+    padding: 30px;
+    border-radius: 8px;
+    width: auto;
+    gap: 15px;
 }
 
 /* Ensure the image is properly aligned to the left */
@@ -57,7 +65,6 @@ body {
     text-align: left; /* Align the links to the left */
     text-decoration: none; 
     color: #007bff; 
-    flex: auto;
     margin-bottom: 10px; /* Add space between the links */
 }
 
@@ -93,9 +100,11 @@ nav {
 }
 
 .profile-img-main {
-    width: 250px;
+    width: 250px; /* Keep the image size fixed */
     height: 250px;
-    margin-right: 2rem;
+    border-radius: 50%;
+    margin-right: 20px; /* Add space between image and text */
+    object-fit: cover; /* Ensure the image doesn't stretch */
     animation: rgb-border 3s infinite alternate;
     -webkit-animation: rgb-border 3s infinite alternate;
 }
@@ -267,6 +276,23 @@ footer {
     }
 
     main {
-        padding: 1rem;
+     padding: 1rem;
     }
 }
+
+@media (max-width: 768px) {
+    #about {
+        flex-direction: column; /* Stack the image and text vertically on small screens */
+        align-items: center; /* Center the content */
+    }
+
+    .profile-img-main {
+        width: 150px; /* Smaller image size for mobile */
+        height: 150px;
+        margin-right: 0; /* Remove margin when stacked vertically */
+        margin-bottom: 20px; /* Add some space below the image */
+    }
+}
+
+
+
